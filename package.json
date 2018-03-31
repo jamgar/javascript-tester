@@ -1,7 +1,7 @@
 {
-  "name": "javascript-starter",
+  "name": "javascript-tester",
   "version": "1.0.0",
-  "description": "JavaScript Starter",
+  "description": "JavaScript Tester Project",
   "main": "app.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
