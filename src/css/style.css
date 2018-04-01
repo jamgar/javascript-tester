@@ -1,5 +1,46 @@
 body {
-  margin: 0;
   text-align: center;
-  background-color: lightblue;
+  background-color: #456990;
+  color: #011936;
+}
+
+.container {
+  background-color: #49DCB1;
+  margin: 30px;
+  padding: 30px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#view {
+  background-color: #85f1d1;
+}
+
+#js-logo svg{
+  height: 150px;
+}
+
+input[type="text"] {
+  width: 300px;
+  max-width: 80%;
+  margin: 20px 0 10px 0;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 3px;
+}
+
+button {
+  width: 200px;
+  max-width: 80%;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  background-color: #456990;
+  color: #FFF;
+}
+
+button:hover {
+  opacity: 0.9;
 }
