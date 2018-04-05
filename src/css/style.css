@@ -44,3 +44,24 @@ button {
 button:hover {
   opacity: 0.9;
 }
+
+#question {
+  padding: 20px 0;
+  max-width: 80%;
+  margin: auto;
+}
+
+#question form {
+  text-align: left;
+}
+
+#question .radio-input {
+  box-sizing: border-box;
+  background-color: #EFEFEF;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+#question .radio-input span {
+  padding-left: 10px;
+}

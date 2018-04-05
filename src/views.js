@@ -22,11 +22,21 @@ export const Welcome = () => {
   )
 }
 
-export const Question = () => {
+export const Question = (question) => {
+  let options = ''
+  question.options.forEach((opt) => {
+    options += `<div class="radio-input">
+                  <input type="radio" name="answers" value="${opt.id}"><span>${opt.option}</span><br/>
+                </div>`;
+  })
+
   return (
-    `<div id="welcome">
-      question
+    `
+    <div id="question">
+      <h3>${question.question}</h3>
+      ${options}
       <button id="next-button">Next Question</button>
-    </div>`
+    </div>
+    `
   )
 }
