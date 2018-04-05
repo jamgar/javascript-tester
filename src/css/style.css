@@ -13,6 +13,7 @@ body {
 }
 
 #view {
+  margin-top: 20px;
   background-color: #85f1d1;
 }
 
@@ -45,6 +46,10 @@ button:hover {
   opacity: 0.9;
 }
 
+#welcome>h1 {
+  padding-top: 10px;
+}
+
 #question {
   padding: 20px 0;
   max-width: 80%;
@@ -64,4 +69,17 @@ button:hover {
 
 #question .radio-input span {
   padding-left: 10px;
+}
+
+#progress {
+  width: 100%;
+  background-color: #FFF;
+  border-radius: 25px;
+}
+
+#progress-bar {
+  width: 1%;
+  height: 30px;
+  background-color: #4cd3ff;
+  border-radius: 25px;
 }

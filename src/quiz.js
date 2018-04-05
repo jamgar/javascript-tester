@@ -11,7 +11,9 @@ class Quiz {
 
   startQuiz = () => {
     // Set Name of Quiz taker
-    this.name = document.getElementById('name').value
+    this.name = document.getElementById('name')
+      ? document.getElementById('name').value
+      : this.name
 
     // Show first question
     this.showQuestion(this.currentId)
@@ -19,8 +21,9 @@ class Quiz {
 
   showQuestion = (id) => {
     document.getElementById('view').innerHTML = views.Question(this.getQuestion(id))
+    this.progress()
     const nextBtn = document.getElementById('next-button')
-    nextBtn.addEventListener('click', quiz.nextQuestion)
+    nextBtn.addEventListener('click', this.nextQuestion)
   }
 
   getQuestion = (id) => {
@@ -44,16 +47,30 @@ class Quiz {
     event.preventDefault()
     this.checkAnswer()
     // Increment currentId to get the next question
-    this.currentId += 1
-
+    this.currentId++
     if (this.currentId < this.questionCount) {
       this.showQuestion(this.currentId)
     } else {
-      document.getElementById('view').innerHTML = `You have ${this.score} correct!`
-      // // TODO: Quit or Play again button
+      document.getElementById('view').innerHTML = views.Finished(this.name, this.score)
+      const playAgainBtn = document.getElementById('play-again-button')
+      playAgainBtn.addEventListener('click', this.playAgain)
     }
   }
 
+  playAgain = () => {
+    this.currentId = 0
+    this.score = 0
+    this.startQuiz()
+  }
+
+  progress = () => {
+    const bar = document.getElementById('progress-bar')
+    const label = document.getElementById('progress-label')
+    // Get percentage completed
+    label.innerHTML = `Question ${this.currentId + 1} of ${this.questionCount}`
+    const width = Math.floor(this.currentId/ this.questionCount * 100)
+    bar.style.width = width + '%'
+  }
 }
 
 export const quiz = new Quiz()
